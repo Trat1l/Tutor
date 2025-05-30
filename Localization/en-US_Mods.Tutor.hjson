@@ -1,0 +1,23 @@
+# This file will automatically update with entries for new content after a build and reload.
+
+Items: {
+	Swaton: {
+		DisplayName: 「Хлыст Банана」
+		Tooltip:
+			'''
+			Взяв это Хлыст в руки...
+			в чувствуете себя рабовладельцем
+			© Антон
+			'''
+	}
+
+	ExampleArrow: {
+		Tooltip: ""
+		DisplayName: Example Arrow
+	}
+}
+
+Projectiles: {
+	ExampleWhipProjectile.DisplayName: Example Whip Projectile
+	ExampleArrowProjectile.DisplayName: Example Arrow Projectile
+}
