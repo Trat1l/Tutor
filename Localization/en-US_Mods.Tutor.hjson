@@ -15,6 +15,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Example Arrow
 	}
+
+	AngryCapitan: {
+		Tooltip: ""
+		DisplayName: Angry Capitan
+	}
 }
 
 Projectiles: {
