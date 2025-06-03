@@ -20,9 +20,16 @@ Items: {
 		Tooltip: ""
 		DisplayName: Angry Capitan
 	}
+
+	MusicBoxFrostpunk: {
+		Tooltip: ""
+		DisplayName: Music Box Frostpunk
+	}
 }
 
 Projectiles: {
 	ExampleWhipProjectile.DisplayName: Example Whip Projectile
 	ExampleArrowProjectile.DisplayName: Example Arrow Projectile
 }
+
+Tiles.MusicBoxFrostpunkTile.MapEntry: Music Box Frostpunk Tile
