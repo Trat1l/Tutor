@@ -6,7 +6,7 @@ using Tutor.Content.System;
 
 namespace Tutor.Content.Buffs.AwakeningBuffs
 {
-    public class AwakeningSpeed : ModBuff
+    public class AwakeningSpeedBuff : ModBuff
     {
         public double i = 1;
         public override void SetStaticDefaults()
@@ -22,14 +22,6 @@ namespace Tutor.Content.Buffs.AwakeningBuffs
                 {
                     i = i + 0.01;
                 }
-                AdvancedPopupRequest advancedPopupRequest = new AdvancedPopupRequest
-                {
-                    Color = Color.Yellow,
-                    Text = i.ToString(),
-                    DurationInFrames = 120,
-                    Velocity = new Vector2(1, 1)
-                };
-                PopupText.NewText(advancedPopupRequest, Main.LocalPlayer.position);
             }
             else
             {
@@ -41,14 +33,6 @@ namespace Tutor.Content.Buffs.AwakeningBuffs
                 {
                     i = i - 0.01;
                 }
-                AdvancedPopupRequest advancedPopupRequest = new AdvancedPopupRequest
-                {
-                    Color = Color.Yellow,
-                    Text = i.ToString(),
-                    DurationInFrames = 120,
-                    Velocity = new Vector2(1, 1)
-                };
-                PopupText.NewText(advancedPopupRequest, Main.LocalPlayer.position);
             }
         }
     }

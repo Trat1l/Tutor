@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Tutor.Content.CalPlayer;
 using Tutor.Content.System;
 
 namespace Tutor.Content.Scenes.AwakeningScene
@@ -15,7 +16,9 @@ namespace Tutor.Content.Scenes.AwakeningScene
         public override bool IsSceneEffectActive(Player player)
         {
             bool b1 = AwakeningSystem.StartAwakening;
-            return b1;
+            bool b2 = TutorPlayer.IsAwakeningSpeed;
+            bool b3 = TutorPlayer.HaveAwakening;
+            return b1 && b2 && b3; 
         }
     }
 }

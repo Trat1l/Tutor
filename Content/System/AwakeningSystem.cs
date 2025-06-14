@@ -2,9 +2,7 @@
 using Terraria;
 using Microsoft.Xna.Framework;
 using Tutor.Content.Buffs.AwakeningBuffs;
-using Terraria.Audio;
-using Terraria.ID;
-using Tutor.Content.Scenes.AwakeningScene;
+using Tutor.Content.CalPlayer;
 namespace Tutor.Content.System
 {
     public class AwakeningSystem : ModSystem
@@ -13,7 +11,9 @@ namespace Tutor.Content.System
         public static int checkTimer = 0;
         public static bool StartAwakening = false;
         public int AwakeningChange = 0;
-        public int AwakeningTime = 10500; // продолжительность пробуждения в тиках
+
+        public int AwakeningSpeedTime = 10500; // продолжительность пробуждения в тиках
+
         AdvancedPopupRequest advancedPopupRequest = new AdvancedPopupRequest
         {
             Color = Color.Yellow,
@@ -31,7 +31,7 @@ namespace Tutor.Content.System
 
         public override void PostUpdateEverything()
         {
-            if (BossChecker.IsAnyBossSummoned() == true && IsAwakening == false) // определяет есть ли босс и нет ли у игрока пробуждения
+            if (BossChecker.IsAnyBossSummoned() == true && IsAwakening == false && TutorPlayer.HaveAwakening == true) // определяет есть ли босс и нет ли у игрока пробуждения
             {
                 checkTimer++;
                 if (checkTimer >= 60)
@@ -45,24 +45,24 @@ namespace Tutor.Content.System
                     }
                 }
             }
-            
-            if (IsAwakening == true)
+
+            if (IsAwakening == true && TutorPlayer.IsAwakeningSpeed == true)
             {
                 if (Main.LocalPlayer.velocity.Y == 0 && Main.LocalPlayer.velocity.X == 0)
                 {
                     if (Keybinds.AwakeningHotKey.JustPressed && IsAwakening == true && StartAwakening == false)
                     {
                         StartAwakening = true;
-                        Main.LocalPlayer.AddBuff(ModContent.BuffType<AwakeningSpeed>(), AwakeningTime);
+                        Main.LocalPlayer.AddBuff(ModContent.BuffType<AwakeningSpeedBuff>(), AwakeningSpeedTime);
                         
                     }
                 }    
                 if (StartAwakening == true) {
                     checkTimer++;
                 }
-                if (!Main.LocalPlayer.HasBuff(ModContent.BuffType<AwakeningSpeed>()) && checkTimer >= AwakeningTime && IsAwakening == true || Main.LocalPlayer.dead == true || BossChecker.IsAnyBossSummoned() == false)
+                if (!Main.LocalPlayer.HasBuff(ModContent.BuffType<AwakeningSpeedBuff>()) && checkTimer >= AwakeningSpeedTime && IsAwakening == true || Main.LocalPlayer.dead == true || BossChecker.IsAnyBossSummoned() == false)
                 {
-                    Main.LocalPlayer.ClearBuff(ModContent.BuffType<AwakeningSpeed>());
+                    Main.LocalPlayer.ClearBuff(ModContent.BuffType<AwakeningSpeedBuff>());
                     IsAwakening = false;
                     StartAwakening = false;
                     checkTimer = 0;

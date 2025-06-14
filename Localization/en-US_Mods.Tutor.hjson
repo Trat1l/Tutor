@@ -54,6 +54,11 @@ Buffs: {
 		DisplayName: Ultra Kill
 		Description: Mods.Tutor.Buffs.UltraKill.Description
 	}
+
+	AwakeningSpeedBuff: {
+		DisplayName: Awakening Speed Buff
+		Description: Mods.Tutor.Buffs.AwakeningSpeedBuff.Description
+	}
 }
 
 Keybinds.ActivateAwekening.DisplayName: Activate Awekening
