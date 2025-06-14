@@ -25,6 +25,16 @@ Items: {
 		Tooltip: ""
 		DisplayName: Music Box Frostpunk
 	}
+
+	Telecaster: {
+		Tooltip: ""
+		DisplayName: Telecaster
+	}
+
+	Palka: {
+		DisplayName: Palka
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -33,3 +43,17 @@ Projectiles: {
 }
 
 Tiles.MusicBoxFrostpunkTile.MapEntry: Music Box Frostpunk Tile
+
+Buffs: {
+	AwakeningSpeed: {
+		Description: Mods.Tutor.Buffs.AwakeningSpeed.Description
+		DisplayName: Awakening Speed
+	}
+
+	UltraKill: {
+		DisplayName: Ultra Kill
+		Description: Mods.Tutor.Buffs.UltraKill.Description
+	}
+}
+
+Keybinds.ActivateAwekening.DisplayName: Activate Awekening
